@@ -20,9 +20,12 @@ import (
 
 // C wrapping code
 
-// #cgo pkg-config: libseccomp
-// #include <stdlib.h>
-// #include <seccomp.h>
+/*
+#cgo CFLAGS: -I${SRCDIR}/libseccomp/include
+#cgo LDFLAGS: -L${SRCDIR}/libseccomp/lib -lseccomp
+#include <stdlib.h>
+#include <seccomp.h>
+*/
 import "C"
 
 // Exported types
